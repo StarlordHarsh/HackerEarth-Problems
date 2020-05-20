@@ -1,0 +1,14 @@
+s=int(input())
+li=[]
+for i in range(s):
+    li.append(input())
+ 
+for i in li:
+    if i == i[::-1]:
+        print("YES",end=" ")
+        if len(i)%2==0:
+            print("EVEN")
+        else:
+            print("ODD")
+    else:
+        print("NO")
