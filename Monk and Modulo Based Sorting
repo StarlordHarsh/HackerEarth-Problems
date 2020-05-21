@@ -1,0 +1,11 @@
+l,mod=map(int,input().split())
+li=list(map(int,input().split()))
+nli=[]
+i=0
+while(len(nli)!=l):
+    for j in range(l):
+        if li[j]%mod==i:
+            nli.append(li[j])
+    i+=1
+for i in nli:
+    print(i,end=" ")
