@@ -1,0 +1,17 @@
+n=int(input())
+for _ in range(n):
+    l,sh=map(int,input().split())
+    li=list(map(int,input().split()))
+    nli=[]
+    while(sh>l):
+        sh=sh-l
+    for _ in range(l):
+        nli.append(0)
+    for i in range(l):
+        if i+sh>=l:
+            nli[i+sh-l]=li[i]
+        elif i+sh<l:
+            nli[i+sh]=li[i]
+    for i in nli:
+        print(i,end=" ")
+    print()
