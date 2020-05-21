@@ -1,0 +1,15 @@
+st=input()
+ct=0
+c=0
+for i in range(len(st)):
+    if st[i:i+1] in ['a','e','i','o','u']:
+        c+=1
+    else:
+        if c>=ct:
+            ct=c
+        c=0
+else:
+    if c>=ct:
+        ct=c
+    c=0 
+print(ct)
