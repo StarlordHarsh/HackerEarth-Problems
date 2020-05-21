@@ -1,0 +1,6 @@
+s,l=input().split()
+li=[]
+for i in range(len(s)):
+    li.append(s[i:len(s)])
+li.sort()
+print(li[int(l)-1])
