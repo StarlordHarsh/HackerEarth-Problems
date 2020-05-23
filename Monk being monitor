@@ -1,12 +1,9 @@
-from collections import Counter 
-n=int(input())
-for _ in range(n):
-    l=int(input())
-    li=list(map(int, input().split()))
-    re = sorted(li, key = li.count,reverse = True)
-    if re.count(re[0])-re.count(re[l-1])>0:
-        print(re.count(re[0])-re.count(re[l-1])) 
-    elif l:
-        print(-1)
-    else:
-        print(1)
+from collections import Counter
+for _ in range(int(input())):
+    _ = int(input())
+    arr = [int(i) for i in input().split()]
+    counted = sorted(list(Counter(arr).values()))
+    if (counted[-1]-counted[0]):
+        print(counted[-1]-counted[0])
+        continue
+    print(-1)
