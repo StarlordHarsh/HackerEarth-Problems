@@ -30,7 +30,7 @@ for _ in range(int(input())):
             rem=0
             for i in li[li.index(y):l]:
                 if i>y:
-                    rem=l-li.index(i)
+                    rem+=1
             else:
                 print(rem)
     else:
