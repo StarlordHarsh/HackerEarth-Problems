@@ -1,0 +1,38 @@
+def bins(arr,l,h,k):
+    mid=(l+h)//2
+    #print(mid,arr[mid])
+    if l>h:
+        #print("return")
+        #print("mid",mid)
+        return mid
+    if arr[mid]==k:
+        #print("mid")
+        return mid
+    elif arr[mid]>k:
+        #print("elif",l,mid)
+        return bins(arr,l,mid-1,k)
+    else:
+        #print("else",mid,h)
+        return bins(arr,mid+1,h,k)
+
+l=int(input())
+li=list(map(int,input().split()))
+li.sort()
+for _ in range(int(input())):
+    x,y=map(int,input().split())
+    #print(x,y)
+    
+    if y in li:
+        #print("Index",li.index(y))
+        if x==0:
+            print(l-li.index(y))
+        else:
+            rem=0
+            for i in li[li.index(y):l]:
+                if i>y:
+                    rem=l-li.index(i)
+            else:
+                print(rem)
+    else:
+        ind=bins(li,0,l-1,y)
+        print(l-1-ind)
