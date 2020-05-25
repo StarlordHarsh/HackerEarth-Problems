@@ -1,0 +1,9 @@
+import bisect
+li = []
+for _ in range(int(input())):
+    a = list(map(int, input().split()))
+    li.append(a[0]**2+a[1]**2)
+li.sort()
+for _ in range(int(input())):
+    r = int(input())
+    print(bisect.bisect(li,r**2))
