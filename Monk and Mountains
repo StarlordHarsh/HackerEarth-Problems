@@ -1,0 +1,17 @@
+from bisect import bisect_left, bisect_right
+a,b=map(int,input().split())
+li=[]
+lisum=[0]
+su=0
+for _ in range(a):
+    a=list(map(int,input().split()))
+    li.append(a[0])
+    su+=a[1]-a[0]+1
+    lisum.append(su)
+for _ in range(b):
+    i=int(input())
+    if i in lisum:
+        print(i-1-lisum[lisum.index(i)-1]+li[lisum.index(i)-1])
+    else:
+        ind=bisect_left(lisum,i)-1
+        print(i-1-lisum[ind]+li[ind])
