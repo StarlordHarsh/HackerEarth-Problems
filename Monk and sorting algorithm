@@ -1,0 +1,11 @@
+l=int(input())
+li=list((input().split()))
+nli=[]
+for i in range(len(li)):
+    for j in range(i+1,len(li)):
+        
+        print(li[i][len(li[i])-5:len(li[i])],"<",li[j][len(li[j])-5:len(li[j])])
+        if li[i][len(li[i])-5:len(li[i])]<li[j][len(li[j])-5:len(li[j])]:
+            li[i],li[j]=li[j],li[i]
+            print(li)
+print(li)
