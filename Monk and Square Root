@@ -1,0 +1,36 @@
+f = open("C:/Users/hj101/Desktop/fe4b62b6-b-input-fe4b5e6.txt.clean.txt", "r")
+txt = f.readlines()
+k = 0
+f1 = open("C:/Users/hj101/Desktop/ans.txt", "r")
+txt1 = f1.readlines()
+z = 0
+
+
+def fun(x, m, n):
+    if x > 333333:
+        return -1
+    elif x ** 2 % m == n and x < 333332:
+        return x
+    else:
+        print(x)
+        fun(x + 1, m, n)
+
+
+for _ in range(int(txt[0])):  # input())):
+    k += 1
+    n, m = map(int, txt[k].split())  # input().split())
+    fl = True
+    x = int(n ** (1 / 2))
+    # while fl:
+    '''if x ** 2 % m == n:
+            print(x ** 2, "%", m, '==', n)
+            print(x)
+            fl = False
+        x += 1
+        if x > 333333:
+            print(-1)
+            break'''
+    print(fun(x, m, n))
+
+    print(txt1[z])
+    z += 1
